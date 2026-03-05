@@ -15,5 +15,6 @@ tags:
 ![disable-flags.jpg](/images/2020-11-09-show-full-url-in-chrome/disable-flags.jpg)
 
 效果：
+
 ![before.jpg](/images/2020-11-09-show-full-url-in-chrome/before.jpg)
 ![after.jpg](/images/2020-11-09-show-full-url-in-chrome/after.jpg)
