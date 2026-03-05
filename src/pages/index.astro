@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Home" description="Ray's personal blog - developer, tech enthusiast">
+  <div class="hero">
+    <pre class="ascii-art">
+    _    _      _ _        _
+   | |  | |    | | |      | |
+   | |__| | ___| | | ___  | |
+   |  __  |/ _ \ | |/ _ \ | |
+   | |  | |  __/ | | (_) ||_|
+   |_|  |_|\___|_|_|\___/(_)
+    </pre>
+    <p class="tagline">
+      <span class="prompt">$ whoami</span>
+    </p>
+    <p class="bio">
+      Developer. Tech enthusiast. Building things with code.
+    </p>
+  </div>
+
+  <section class="quick-links">
+    <h2 class="section-title">
+      <span class="prompt">$ ls -la</span> ./quick-links
+    </h2>
+    <ul class="link-list">
+      <li>
+        <span class="prompt">$ cd</span> <a href="/blog">/blog</a>
+        <span class="desc">- thoughts and tutorials</span>
+      </li>
+      <li>
+        <span class="prompt">$ cd</span> <a href="/about">/about</a>
+        <span class="desc">- more about me</span>
+      </li>
+      <li>
+        <span class="prompt">$ cd</span> <a href="https://github.com/adamus7/raydbg-blog">/github</a>
+        <span class="desc">- source code</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="latest-posts">
+    <h2 class="section-title">
+      <span class="prompt">$ tail</span> -f recent-posts.log
+    </h2>
+    <ul class="post-list">
+      <li>
+        <span class="date">2024-01-15</span>
+        <span class="prompt">-&gt;</span>
+        <a href="/blog/hello-world">Hello World</a>
+      </li>
+    </ul>
+    <p class="more-link">
+      <a href="/blog">[ view all posts ]</a>
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    text-align: center;
+    padding: 2rem 0 3rem;
+  }
+
+  .ascii-art {
+    font-size: 10px;
+    line-height: 1.2;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+  }
+
+  .tagline {
+    margin-bottom: 1rem;
+  }
+
+  .bio {
+    color: var(--text-secondary);
+  }
+
+  .section-title {
+    font-size: 1rem;
+    font-weight: normal;
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+  }
+
+  .quick-links {
+    margin-bottom: 3rem;
+  }
+
+  .link-list, .post-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .link-list li, .post-list li {
+    margin: 0.75rem 0;
+  }
+
+  .desc {
+    color: var(--text-muted);
+  }
+
+  .date {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-right: 0.5rem;
+  }
+
+  .more-link {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+</style>

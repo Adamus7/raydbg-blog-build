@@ -1,0 +1,80 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'A personal blog about technology and development' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title} | RayDBG</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="site-header">
+        <nav class="nav">
+          <a href="/">[ home ]</a>
+          <a href="/blog">[ blog ]</a>
+          <a href="/about">[ about ]</a>
+        </nav>
+      </header>
+
+      <main>
+        <slot />
+      </main>
+
+      <footer class="site-footer">
+        <p class="prompt">raydbg@blog ~</p>
+        <p class="footer-text">built with astro</p>
+      </footer>
+    </div>
+  </body>
+</html>
+
+<style>
+  .site-header {
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 2rem;
+  }
+
+  .nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .nav a {
+    border: none;
+    color: var(--text-secondary);
+  }
+
+  .nav a:hover {
+    color: var(--text-primary);
+  }
+
+  main {
+    min-height: 60vh;
+    padding: 2rem 0;
+  }
+
+  .site-footer {
+    padding: 2rem 0;
+    border-top: 1px solid var(--border);
+    margin-top: 2rem;
+    color: var(--text-muted);
+  }
+
+  .footer-text {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+  }
+</style>

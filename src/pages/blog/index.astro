@@ -1,0 +1,124 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const posts = (await getCollection('blog'))
+  .filter(post => !post.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout title="Blog" description="Technical articles and tutorials">
+  <div class="blog-header">
+    <pre class="ascii-art">
+  _____
+ |_   _|__ _ __ _ __ ___  _ __   ___  _ __
+   | |/ _ \ '__| '_ ` _ \| '_ \ / _ \| '_|
+   | |  __/ |  | | | | | | |_) | (_) | |
+   |_|\___|_|  |_| |_| |_| .__/ \___/|_|
+                          |_|
+    </pre>
+    <p class="subtitle">
+      <span class="prompt">$ ls</span> ./articles
+      <span class="count">[{posts.length} files]</span>
+    </p>
+  </div>
+
+  <div class="posts-container">
+    <ul class="post-list">
+      {posts.map((post) => (
+        <li class="post-item">
+          <span class="post-date">
+            {post.data.pubDate.toISOString().split('T')[0]}
+          </span>
+          <span class="prompt">-&gt;</span>
+          <a href={`/blog/${post.slug}`} class="post-title">
+            {post.data.title}
+          </a>
+          {post.data.tags.length > 0 && (
+            <span class="post-tags">
+              [{post.data.tags.join(', ')}]
+            </span>
+          )}
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  {posts.length === 0 && (
+    <div class="empty-state">
+      <p class="prompt">$ echo "No posts yet"</p>
+      <p class="empty-message">Coming soon...</p>
+    </div>
+  )}
+</BaseLayout>
+
+<style>
+  .blog-header {
+    margin-bottom: 2rem;
+  }
+
+  .ascii-art {
+    font-size: 10px;
+    line-height: 1.15;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+  }
+
+  .subtitle {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  .count {
+    color: var(--text-secondary);
+  }
+
+  .post-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .post-item {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px dashed var(--border);
+  }
+
+  .post-item:last-child {
+    border-bottom: none;
+  }
+
+  .post-date {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    min-width: 100px;
+  }
+
+  .post-title {
+    flex: 1;
+    min-width: 200px;
+    border: none;
+  }
+
+  .post-title:hover {
+    color: var(--text-primary);
+  }
+
+  .post-tags {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 3rem 0;
+    color: var(--text-muted);
+  }
+
+  .empty-message {
+    margin-top: 1rem;
+  }
+</style>

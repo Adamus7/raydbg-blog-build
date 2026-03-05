@@ -1,0 +1,183 @@
+:root {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #111111;
+  --bg-tertiary: #1a1a1a;
+  --text-primary: #e0e0e0;
+  --text-secondary: #888888;
+  --text-muted: #555555;
+  --accent: #cccccc;
+  --border: #333333;
+  --terminal-green: #00ff00;
+  --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--text-primary);
+  text-decoration: none;
+  border-bottom: 1px solid var(--text-muted);
+  transition: border-color 0.2s ease;
+}
+
+a:hover {
+  border-color: var(--accent);
+}
+
+::selection {
+  background-color: var(--text-secondary);
+  color: var(--bg-primary);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Container */
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Terminal cursor blink animation */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.cursor {
+  display: inline-block;
+  width: 0.6em;
+  height: 1.2em;
+  background-color: var(--text-primary);
+  animation: blink 1s step-end infinite;
+  vertical-align: text-bottom;
+}
+
+/* Terminal prompt */
+.prompt {
+  color: var(--text-secondary);
+}
+
+.prompt::before {
+  content: '$ ';
+  color: var(--text-muted);
+}
+
+/* ASCII art header */
+.ascii-art {
+  font-size: 11px;
+  line-height: 1.1;
+  color: var(--text-secondary);
+  white-space: pre;
+  margin-bottom: 2rem;
+}
+
+/* Code blocks */
+pre, code {
+  font-family: var(--font-mono);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+}
+
+code {
+  padding: 0.2em 0.4em;
+  font-size: 0.9em;
+}
+
+pre {
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+pre code {
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+/* Blockquote */
+blockquote {
+  border-left: 2px solid var(--border);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* List */
+ul, ol {
+  padding-left: 1.5rem;
+}
+
+li {
+  margin: 0.5rem 0;
+}
+
+/* Horizontal rule */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.5rem;
+  text-align: left;
+}
+
+th {
+  background-color: var(--bg-secondary);
+}
+
+/* Image */
+img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+}
+
+/* Strong and emphasis */
+strong {
+  color: var(--accent);
+}
+
+em {
+  color: var(--text-secondary);
+}

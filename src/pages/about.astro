@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About" description="About RayDBG">
+  <div class="about-header">
+    <pre class="ascii-art">
+  ___                  _   _
+ / _ \ _ __   ___  ___| |_| |
+| | | | '_ \ / _ \/ __| __| |
+| |_| | | | |  __/\__ \ |_|_|
+ \___/|_| |_|\___||___/\__(_)
+    </pre>
+  </div>
+
+  <section class="about-content">
+    <p class="prompt">$ cat README.md</p>
+    <p>
+      Hi, I'm Ray. I'm a software developer passionate about building
+      elegant solutions to complex problems.
+    </p>
+
+    <h2 class="section-title">
+      <span class="prompt">$ whoami</span> --long
+    </h2>
+    <ul class="info-list">
+      <li><span class="label">Location:</span> Somewhere in the world</li>
+      <li><span class="label">Interests:</span> Programming, System Design, Open Source</li>
+      <li><span class="label">Skills:</span> TypeScript, Python, Go, Rust</li>
+    </ul>
+
+    <h2 class="section-title">
+      <span class="prompt">$ cat</span> contact.txt
+    </h2>
+    <ul class="contact-list">
+      <li>
+        <span class="prompt">$</span>
+        <a href="https://github.com/adamus7">GitHub</a>
+      </li>
+      <li>
+        <span class="prompt">$</span>
+        <a href="mailto:hello@raydbg.com">Email</a>
+      </li>
+    </ul>
+  </section>
+</BaseLayout>
+
+<style>
+  .about-header {
+    margin-bottom: 2rem;
+  }
+
+  .ascii-art {
+    font-size: 10px;
+    line-height: 1.15;
+    color: var(--text-secondary);
+  }
+
+  .about-content {
+    max-width: 600px;
+  }
+
+  .about-content p {
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1rem;
+    font-weight: normal;
+    margin: 2rem 0 1rem;
+    color: var(--text-secondary);
+  }
+
+  .info-list, .contact-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .info-list li, .contact-list li {
+    margin: 0.5rem 0;
+  }
+
+  .label {
+    color: var(--text-muted);
+  }
+</style>
