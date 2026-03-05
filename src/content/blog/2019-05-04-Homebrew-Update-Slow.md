@@ -1,5 +1,4 @@
 ---
-layout: '[post]'
 title: 解决 Homebrew 下载更新极慢的问题
 pubDate: 2019-05-04 00:48:57
 tags:

@@ -89,7 +89,7 @@ Now, let's access our website using HTTPS protocol, you should able to see it is
 # One more step
 Wait! Don't forget to redirect HTTP request to HTTPS!
 You can do it in many ways. I just added a redirect rule in web.config as below
-    {% codeblock lang:xml %}
+    ```xml
     <configuration xmlns="http://schemas.microsoft.com/.NetConfiguration/v2.0">
         <system.webServer>    
             <rewrite>
@@ -105,7 +105,7 @@ You can do it in many ways. I just added a redirect rule in web.config as below
             </rewrite>
     </system.webServer>
     </configuration>
-    {% endcodeblock %}
+    ```
 
 Reference:
 *   [How to install and setup Let's Encrypt on Azure Web Apps](https://github.com/sjkp/letsencrypt-siteextension/wiki/How-to-install)

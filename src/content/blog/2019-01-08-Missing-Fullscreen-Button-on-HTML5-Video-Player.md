@@ -1,5 +1,4 @@
 ---
-layout: '[post]'
 title: Missing Fullscreen Button on HTML5 Video Player
 pubDate: 2019-01-08 15:51:47
 tags:

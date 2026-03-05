@@ -1,5 +1,4 @@
 ---
-layout: '[post]'
 title: Embed Jupyter Notebook into Hexo Post
 pubDate: 2019-01-04 15:30:01
 tags:
@@ -33,7 +32,6 @@ Two new items will be created after running the command:
 Create a new post in Hexo and copy the content of notebook.md to the post body.
 ```
 ---
-layout: '[post]'
 title: New Blog Post
 ---
 <Copy the content to here>

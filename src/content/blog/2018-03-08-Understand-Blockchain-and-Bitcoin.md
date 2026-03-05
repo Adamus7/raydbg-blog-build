@@ -1,5 +1,4 @@
 ---
-layout: '[post]'
 title: 理解区块链和比特币(一)
 pubDate: 2018-03-08 11:12:12
 tags: 

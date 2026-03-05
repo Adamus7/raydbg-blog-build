@@ -16,7 +16,7 @@ See more:
     https://msdn.microsoft.com/en-us/skype/skype-for-business-bot-framework/docs/overview
 
 After further testing, here is my sample code which can initial a conversation from bot to a specific SfB user and send message to the user in same conversation:
-{% codeblock lang:csharp %}
+```csharp
 //Initiate a Conversation
 string trustServiceUri = "https://api.skypeforbusiness.com/platformservice/botframework";
 MicrosoftAppCredentials.TrustServiceUrl(trustServiceUri);

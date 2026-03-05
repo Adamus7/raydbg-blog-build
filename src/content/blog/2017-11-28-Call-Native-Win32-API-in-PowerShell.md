@@ -1,5 +1,4 @@
 ---
-layout: '[post]'
 title: Call Native Win32 API in PowerShell
 pubDate: 2017-11-28 10:31:22
 tags:

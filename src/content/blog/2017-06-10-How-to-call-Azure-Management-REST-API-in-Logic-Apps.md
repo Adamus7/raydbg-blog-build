@@ -33,13 +33,13 @@ In this action, we will call Azure REST API using client certificate (pfx + pass
 
 The format of the response body is a xml file as follows:
 
-{% codeblock lang:xml %}
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <Principal xmlns=”http://schemas.microsoft.com/windowsazure”>
   <Role>role-names-for-user-account</Role>
   <Email>email-address-for-user-account</Email>
 </Principal>
-{% endcodeblock %}
+```
 
 In Logic Apps, it is more convenient to pass the data as a JSON file between different actions or apps.
 You can use @JSON() function to convert the XML content easily in Logic Apps as below:
@@ -51,7 +51,7 @@ The sendEmail app takes an array of subscription admins and uses Send email acti
 ### Create a request trigger to accept the response.
 Here is a sample of the JSON format playload:
 
-{% codeblock lang:json %}
+```json
 {
   "Principals": {
     "Principal": [
@@ -66,7 +66,7 @@ Here is a sample of the JSON format playload:
     ]
   }
 }
-{% endcodeblock %}
+```
 
 Put the above JSON data to http://jsonschema.net to get the its JSON schema.
 Paste the schema definition in request trigger. With the help of JSON schema, Logic App could automatically tokenize all properties e.g. Principals, EmailId etc.

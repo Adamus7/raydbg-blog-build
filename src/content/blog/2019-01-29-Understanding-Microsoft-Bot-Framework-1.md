@@ -1,5 +1,4 @@
 ---
-layout: '[post]'
 title: 理解 Microsoft Bot Framework：BotBuilder
 pubDate: 2019-01-29 17:53:03
 tags:

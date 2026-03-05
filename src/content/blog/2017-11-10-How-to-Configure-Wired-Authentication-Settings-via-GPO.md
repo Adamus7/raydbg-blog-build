@@ -43,15 +43,15 @@ Right click on the right panel and click Create A New Wired Network Policy for W
 Alternatively, you can export the Interface configuration profile from one machine and import to other machines.
 1.	Manually configure the 802.1x authentication settings on one test machine
 2.	Export the NIC profile:
-    {% codeblock lang:powershell %}
+    ```powershell
     netsh lan show profiles
     netsh lan export profile folder=PATH_TO_FOLDER interface="INTERFACE_NAME"
-    {% endcodeblock %}
+    ```
 3.	Copy the XML file to target machine.
     Run the below commands to import the wired profile:
-    {% codeblock lang:powershell %}
+    ```powershell
     netsh lan add profile filename="PATH_AND_FILENAME.xml" interface="INTERFACE_NAME"
-    {% endcodeblock %}
+    ```
 
 Reference:
 * [Configure 802.1X Wired Access Clients by using Group Policy Management](https://msdn.microsoft.com/en-us/library/cc731213.aspx)

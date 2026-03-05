@@ -1,5 +1,4 @@
 ---
-layout: '[post]'
 title: IE11 Installation Failure with Error Code 9c59
 pubDate: 2017-11-25 22:26:04
 tags:
@@ -22,7 +21,7 @@ There are some logs can help you to dig into this error:
 
 # A typical failure with error code 9c59 in IE11_main.log
 Probably 50% of IE 11 installation failure has a similar pattern in IE11_mail.log as below:
-{% codeblock %}
+```
 04:36.262: INFO:    Waiting for Active Setup to complete. ({A509B1A8-37EF-4b3f-8CFC-4F3A74704073})
 04:41.269: INFO:    Waiting for Active Setup to complete. ({A509B1A8-37EF-4b3f-8CFC-4F3A74704073})
 04:46.277: INFO:    Waiting for Active Setup to complete. ({A509B1A8-37EF-4b3f-8CFC-4F3A74704073})
@@ -33,11 +32,11 @@ Probably 50% of IE 11 installation failure has a similar pattern in IE11_mail.lo
 05:12.704: INFO:    Cleaning up temporary files in: C:\Windows\TEMP\IE17934.tmp
 05:12.766: INFO:    Unable to remove directory C:\Windows\TEMP\IE17934.tmp, marking for deletion on reboot.
 05:12.766: INFO:    Released Internet Explorer Installer Mutex
-{% endcodeblock %}
+```
 The setup exit code: `0x00009C59 (40025)` means [USER_ERROR_NEUTRAL_CAB_INSTALL_FAILED](https://docs.microsoft.com/en-us/internet-explorer/ie11-deploy-guide/setup-problems-with-ie11)
 
 Then you might see a similar error pattern in CBS.log as below:
-{% codeblock %}
+```
 2017-11-24 14:07:39, Info                  CBS    Exec: Staging Package: Package_3_for_KB2706045~31bf3856ad364e35~amd64~~6.1.1.0, Update: 2706045-8_neutral_GDR, PinDeployment: amd64_695c405833e475d1d5937b41a3983d92_31bf3856ad364e35_8.0.7601.17866_none_f28003cc92801a49
 2017-11-24 14:07:40, Info                  CBS    Failed to find file: amd64_microsoft-windows-scripting-vbscript_31bf3856ad364e35_6.1.7600.21238_none_a51187a7608a895d\vbscript.dll [HRESULT = 0x80070002 - ERROR_FILE_NOT_FOUND]
 2017-11-24 14:07:40, Info                  CBS    Failed to gather all required files. [HRESULT = 0x80070002 - ERROR_FILE_NOT_FOUND]
@@ -63,7 +62,7 @@ Then you might see a similar error pattern in CBS.log as below:
 2017-11-24 14:07:40, Info                  CBS    SQM: Upload requested for report: PackageChangeEnd_Microsoft-Windows-InternetExplorer-Package-TopLevel~31bf3856ad364e35~amd64~~11.2.9600.16428, session id: 142862, sample type: Standard
 2017-11-24 14:07:40, Info                  CBS    SQM: Ignoring upload request because the sample type is not enabled: Standard
 2017-11-24 14:07:40, Info                  CBS    Enabling LKG boot option
-{% endcodeblock %}
+```
 The installation failed start at `Exec: Staging Package: Package_3_for_KB2706045~31bf3856ad364e35~amd64~~6.1.1.0.`
 That means one package of KB2706045 is corrupted for some reasons.
 

@@ -1,5 +1,4 @@
 ---
-layout: '[post]'
 title: 给微信公众号加个 Bot
 pubDate: 2019-01-17 10:42:23
 tags:

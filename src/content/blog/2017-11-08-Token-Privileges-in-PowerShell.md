@@ -18,7 +18,7 @@ Here is an example, I would like to delete some registry key under [HKLM\SOFTWAR
 So I need call the API to manipulate the privileges before calling Remove-Item.
 Here is sample script:
 
-{% codeblock lang:powershell %}
+```powershell
 $AdjustTokenPrivileges=@"
 using System;
 using System.Runtime.InteropServices;
@@ -99,7 +99,7 @@ $keyCR.Close()
 Remove-Item -path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages\Microsoft-Windows-PowerShell-V2-ServerCore-WOW64-Package~31bf3856ad364e35~amd64~ja-JP~6.3.9600.16384' -Recurse
 
 Write-Host "..Done." 
-{% endcodeblock %}
+```
 
 Enjoy it.
 References:

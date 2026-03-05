@@ -1,5 +1,4 @@
 ---
-layout: '[post]'
 title: 我的 Mac OS 生产力配置
 pubDate: 2019-05-02 22:16:19
 tags:
