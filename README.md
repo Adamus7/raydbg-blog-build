@@ -28,7 +28,11 @@ npm run preview
 
 ## Writing Blog Posts
 
-Create new blog posts in `src/content/blog/`:
+### Create a New Post
+
+1. Create a new Markdown file in `src/content/blog/`
+2. Use the naming convention: `YYYY-MM-DD-slug.md`
+3. Add the required frontmatter at the top
 
 ```markdown
 ---
@@ -51,6 +55,49 @@ Your content here...
 | `updatedDate` | date | Last updated date (optional) |
 | `tags` | string[] | Post tags (optional) |
 | `draft` | boolean | Mark as draft (optional, default: false) |
+
+### Markdown Syntax Examples
+
+```markdown
+# Heading 1
+## Heading 2
+### Heading 3
+
+**Bold text** and *italic text*
+
+- Bullet list item 1
+- Bullet list item 2
+  - Nested item
+
+1. Numbered list item 1
+2. Numbered list item 2
+
+[Link text](https://example.com)
+
+![Image alt text](/images/path/to/image.jpg)
+
+> Blockquote
+
+---
+
+Inline `code` and code blocks:
+
+```
+function hello() {
+  console.log("Hello, World!");
+}
+```
+
+| Table | Header |
+|-------|--------|
+| Cell 1 | Cell 2 |
+```
+
+### Tips
+
+- Use `<!-- more -->` to create a preview excerpt on the blog listing page
+- Put images in `public/images/` directory
+- Set `draft: true` to hide a post during development
 
 ## Project Structure
 
