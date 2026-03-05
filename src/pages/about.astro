@@ -13,13 +13,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </pre>
   </div>
 
-  <section class="about-content">
-    <p class="prompt">$ cat README.md</p>
-    <p>
-      Hi, I'm Ray. I'm a Solution Architect passionate about building
-      elegant solutions to complex problems.
-    </p>
+  <section class="profile">
+    <div class="profile-header">
+      <img src="/avatar/avatar-0.jpg" alt="RayDBG Avatar" class="avatar" />
+      <div class="profile-info">
+        <p class="prompt">$ cat README.md</p>
+        <p>
+          Hi, I'm Ray. I'm a Solution Architect passionate about building
+          elegant solutions to complex problems.
+        </p>
+      </div>
+    </div>
+  </section>
 
+  <section class="about-content">
     <h2 class="section-title">
       <span class="prompt">$ whoami</span> --long
     </h2>
@@ -56,12 +63,37 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     color: var(--text-secondary);
   }
 
-  .about-content {
-    max-width: 600px;
+  .profile {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
   }
 
-  .about-content p {
-    margin-bottom: 1.5rem;
+  .profile-header {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 4px;
+    border: 2px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .profile-info p {
+    margin-bottom: 0.75rem;
+  }
+
+  .profile-info p:first-child {
+    margin-bottom: 0.5rem;
+  }
+
+  .about-content {
+    max-width: 600px;
   }
 
   .section-title {
@@ -82,5 +114,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .label {
     color: var(--text-muted);
+  }
+
+  @media (max-width: 540px) {
+    .profile-header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .avatar {
+      width: 80px;
+      height: 80px;
+    }
   }
 </style>
