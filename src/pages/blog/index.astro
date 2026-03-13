@@ -120,4 +120,24 @@ const posts = (await getCollection('blog'))
   .empty-message {
     margin-top: 1rem;
   }
+
+  @media (max-width: 540px) {
+    .post-item {
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .post-date {
+      min-width: unset;
+      font-size: 0.75rem;
+    }
+
+    .post-title {
+      min-width: unset;
+    }
+
+    .post-tags {
+      font-size: 0.7rem;
+    }
+  }
 </style>
